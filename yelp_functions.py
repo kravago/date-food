@@ -2,7 +2,6 @@ import requests
 from urllib.error import HTTPError
 from urllib.parse import quote
 from urllib.parse import urlencode
-from config import API_KEY
 
 
 # API constants, you shouldn't have to change these.
