@@ -1,1 +1,1 @@
-web: flask translate compile; gunicorn datefood:app
+web: flask translate compile; gunicorn date_food:app
