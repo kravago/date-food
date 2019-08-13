@@ -7,12 +7,6 @@ from urllib.parse import urlencode
 # API constants, you shouldn't have to change these.
 API_HOST = 'https://api.yelp.com'
 SEARCH_PATH = '/v3/businesses/search'
-BUSINESS_PATH = '/v3/businesses/'  # Business ID will come after slash.
-
-
-# Defaults for our simple example.
-DEFAULT_TERM = 'dinner'
-DEFAULT_LOCATION = 'San Francisco, CA'
 SEARCH_LIMIT = 10
 
 
@@ -41,7 +35,7 @@ def request(host, path, api_key, url_params=None):
     return response.json()
 
 
-def search(api_key, term, location, price):
+def search(api_key, term, location):
     """Query the Search API by a search term and location.
     Args:
         term (str): The search term passed to the API.
@@ -54,7 +48,7 @@ def search(api_key, term, location, price):
         'term': term.replace(' ', '+'),
         'location': location.replace(' ', '+'),
         'limit': SEARCH_LIMIT,
-        'price': price
+        'open_now': True
     }
     return request(API_HOST, SEARCH_PATH, api_key, url_params=url_params)
 
