@@ -13,6 +13,7 @@
             <h1>I found the place for you!:</h1>
             
             <h2>{{ yelp_results.name }}</h2>
+            <p>{{ yelp_results.location.address1 }} {{ yelp_results.location.city }}, {{ yelp_results.location.state }} {{ yelp_results.location.zip_code }}</p>
             <img src={{ yelp_results.image_url }} alt="plz load" width="400" height="400"> 
     </div>
 

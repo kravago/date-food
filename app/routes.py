@@ -2,7 +2,7 @@ from flask import render_template, flash, redirect, url_for
 from app import app
 from app.forms import QueryForm
 
-from yelp_functions import search#, API_KEY
+from yelp_functions import search
 import os
 API_KEY = os.environ.get('API_KEY', None)
 
@@ -12,11 +12,9 @@ import random
 def index():
     form = QueryForm()
     if form.validate_on_submit():
-            flash('Finding {}, in {} with an expensiveness level of {}.'.format(
-                form.food_type.data, form.location.data, form.price_range.data))
 
             # query yelp api
-            yelp_results = search(API_KEY, form.food_type.data, form.location.data, form.price_range.data)
+            yelp_results = search(API_KEY, form.food_type.data, form.location.data)
 
             # select random item in list
             rand_restaurant = random.randint(0,10)
