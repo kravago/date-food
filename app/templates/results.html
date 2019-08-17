@@ -2,22 +2,15 @@
 
 {% block app_content %}
 
-<div class="row">
+    <a class="btn btn-primary" href={{ url_for('index') }} role="button">Back to Main Page</a>
+    <a class="btn btn-success" href={{ yelp_results.url }}>Yelp Page</a><br>
 
-    <div class="col-md-4">
-    </div>
+    <h1>I found a place:</h1>
+    
+    <h2>{{ yelp_results.name }} - Rating: {{ yelp_results.rating }}</h2>
+    <p>{{ yelp_results.location.address1 }}</p>
+    <p>{{ yelp_results.location.city }}, {{ yelp_results.location.state }} {{ yelp_results.location.zip_code }}</p>
 
-    <div class="col-md-4">
-            <a href={{ url_for('index') }}>Back to main</a>
+    <img src={{ yelp_results.image_url }} alt="restaurant" width="400" height="400"> 
 
-            <h1>I found the place for you!:</h1>
-            
-            <h2>{{ yelp_results.name }}</h2>
-            <p>{{ yelp_results.location.address1 }} {{ yelp_results.location.city }}, {{ yelp_results.location.state }} {{ yelp_results.location.zip_code }}</p>
-            <img src={{ yelp_results.image_url }} alt="plz load" width="400" height="400"> 
-    </div>
-
-    <div class="col-md-4">
-    </div>
-</div>
 {% endblock %}
