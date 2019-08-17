@@ -7,7 +7,7 @@ from urllib.parse import urlencode
 # API constants, you shouldn't have to change these.
 API_HOST = 'https://api.yelp.com'
 SEARCH_PATH = '/v3/businesses/search'
-SEARCH_LIMIT = 10
+SEARCH_LIMIT = 25
 
 
 def request(host, path, api_key, url_params=None):

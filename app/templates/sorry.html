@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+<a class="btn btn-primary" href={{ url_for('index') }} role="button">Back to Main Page</a>
+
+<div class="jumbotron">
+    <h2>Sorry, couldn't find anything that matched your request :(</h2>
+    <img src="{{ url_for('static', filename='crying.jpg') }}" alt="crying cat" height="400" width="600">
+</div>
+
+{% endblock %}

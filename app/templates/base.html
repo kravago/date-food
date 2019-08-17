@@ -3,22 +3,30 @@
 {% block title %}date-food{% endblock %}
 
 {% block navbar %}
-    <nav class="navbar navbar-default">
-
-    </nav>
+    <nav class="navbar navbar-dark bg-dark"></nav>
 {% endblock %}
 
 {% block content %}
-    <div class="content">
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul>
-                {% for message in messages %}
-                <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-        {% endwith %}
-        {% block app_content %}{% endblock %}
+<div class="content">
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% endwith %}
+            
+            {% block app_content %}{% endblock %}
+        </div>
+        <div class="col-md-4"></div>
     </div>
+
+</div>
+
 {% endblock %}
