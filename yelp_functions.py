@@ -48,7 +48,8 @@ def search(api_key, term, location):
         'term': term.replace(' ', '+'),
         'location': location.replace(' ', '+'),
         'limit': SEARCH_LIMIT,
-        'open_now': True
+        'open_now': True,
+        'radius': 8050
     }
     return request(API_HOST, SEARCH_PATH, api_key, url_params=url_params)
 
